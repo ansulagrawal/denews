@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&display=swap');
+
+body {
+  background-color: whitesmoke;
+}
+.App {
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.publishing {
+  margin-bottom: 0.5em;
+  width: 45%;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.submission {
+  color: #000;
+  background-color: rgb(235, 235, 235);
+  width: 50%;
+  border-radius: 1em;
+  padding: 1px;
+  margin: auto;
+  text-align: center;
+  overflow-wrap: break-word;
+  padding: 20px 50px 20px 50px;
+  margin-bottom: 1em;
+}
+
+.topNav {
+  list-style: none;
+  display: flex;
+  padding-right: 5vw;
+}
+
+.topNav button {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+
+  letter-spacing: 1.75px;
+  text-transform: uppercase;
+  
+  color: grey;
+  border: none;
+  
+  mix-blend-mode: normal;
+  margin-right: 10px;
+  }
+
+.topNav button:hover {
+  background-color: lightblue;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Header{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Header > h1{
+  padding-left: 5vw;
+  font-family: 'Lato';
+  display: flex;
+  flex-direction: row;
+}
+
+button{
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.active{
+  color: #000 !important;
+}
+
+.titleDot{
+  background-color: #FF565C;
+  width: 8px;
+  height: 5px;
+  align-self: flex-end;
+  margin-bottom: 6px;
+  margin-left: 5px;
+}
+
+.rewardForm{
+  margin-top: 50px;
+}
+
+pre{
+  margin-bottom: 30px;
+}
+
+
+.auditForm {
+  position: relative;
+  width: 50%;
+  margin: 50px auto;
+  padding: 50px;
+  background: white;
+  text-align: center;
+}
+
+.auditInput {
+  display: inline-block;
+  width: 100%;
+  margin: 20px 0;
+  padding: 10px;
+  border: 2px dashed lightblue;
+  outline: none;
+  font-size: 20px;
+  font-family: 'Economica', 'Arial', sans-serif;
+  font-weight: 400;
+  transition: all 0.2s ease;
+}
+
+.auditInput:focus { border-color: deepskyblue; }
+
+.auditFormButton {
+  width: 150px;
+  height: 50px;
+  /* padding: 10px 15px; */
+  margin-top: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: white;
+  font-family: 'Economica', 'Arial', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  background: mediumblue;
+  transition: all 0.2s ease;
+}
+
+.auditFormButton:hover { background: midnightblue; }
+
+.auditFormButton.valid,
+.auditFormButton.valid:hover { background: mediumseagreen; }
+
+
+.auditFormButton {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 0 12px 12px 0;
+  border: none;
+  cursor: pointer;
+  padding: 0.55em 1.5em;
+  color: #fff;
+  background-color: #FF565C;
+  border-radius: 12px;
+  /* font-size: clamp(14px, calc(0.875rem + ((1vw - 5.76px) * 0.641)), 18px); */
+}
+
+.auditFormButton:hover {
+  background-color: #dd565C;
+}

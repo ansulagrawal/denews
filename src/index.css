@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+textarea {
+    resize: none;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.primary-input {
+    max-width: 400px;
+}
+.contact-question {
+    color: #a8a8a8;
+    font-size: clamp(10px, calc(0.625rem + ((1vw - 5.76px) * 0.641)), 14px) !important;
+}
+input, ::placeholder, select, textarea {
+    color: #a8a8a8 !important;
+}
+.contact-input {
+    display: flex;
+}
+.contact-input input {
+    flex: 1;
+    padding: 0.8em 0em 0.8em 1em;
+    background-color: #f2f2f2;
+    box-shadow: none;
+    border-radius: 12px 0 0 12px;
+    border: none;
+    font-size: clamp(14px, calc(0.875rem + ((1vw - 5.76px) * 0.641)), 18px);
+}
+.contact-input button {
+    display: flex;
+    align-items: center;
+    padding: 0 0.22em 0 0;
+    background-color: #f2f2f2;
+    border-radius: 0 12px 12px 0;
+    border: none;
+    cursor: pointer;
+}
+.contact-input button span {
+    padding: 0.55em 1.5em;
+    color: #fff;
+    background-color: #FF565C;
+    border-radius: 12px;
+    font-size: clamp(14px, calc(0.875rem + ((1vw - 5.76px) * 0.641)), 18px);
+}
+
+.contact-input button span:hover {
+    background-color: #dd565C;
+}
+
+
+.write-btn{
+    background-color: #dd565C;
+    color: white;
+    border: 1px solid #d8464e;
+}
+.write-btn:hover{
+    background-color: #e3353a;
+}
