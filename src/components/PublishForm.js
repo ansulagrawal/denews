@@ -40,9 +40,9 @@ class PublishForm extends Component {
                 
                     <input placeholder="Title (40 chars max)"
                         type='text' name="title"
-                        onChange={this.myChangeHandler} maxLength="40" className="publishing pl-3" style={{height:"25px", border:"1px solid #ccc",  padding:"5px 20px"}} 
+                        onChange={this.myChangeHandler} maxLength="40" className="publishing pl-3" style={{height:"25px", border:"2px dashed #ccc",  padding:"5px 20px"}} 
                     /><br></br>
-                    <textarea className="publishing" placeholder="Talk about whatever you like! Try to keep it civil though (300 chars max)" maxLength="300" name="content" onChange={this.myChangeHandler} rows="4" style={{ border:"1px solid #ccc", padding:"5px 20px" }}></textarea>
+                    <textarea className="publishing" placeholder="Talk about whatever you like! Try to keep it civil though (300 chars max)" maxLength="300" name="content" onChange={this.myChangeHandler} rows="4" style={{ border:"2px dashed #ccc", padding:"5px 20px" }}></textarea>
                     <br></br>
                     <button  type="submit" className='write-btn' style={{width:"100px", height:"30px"}}>Publish</button>
                        

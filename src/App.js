@@ -11,7 +11,7 @@ class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { tab: "Home", web3: null };
+        this.state = { tab: "Home", web3: null,active:"Home" };
 
     }
 
@@ -23,12 +23,15 @@ class App extends Component {
         switch (event.target.name) {
             case "Home":
                 this.setState({ tab: "Home" });
+                this.setState({active:"Home"});
                 break;
             case "Write":
                 this.setState({ tab: "Write" });
+                this.setState({active:"Write"});
                 break;
             case "Rewards":
                 this.setState({ tab: "Rewards" });
+                this.setState({active:"Rewards"});
                 break;
         }
     }
@@ -52,7 +55,7 @@ class App extends Component {
         const header = 
         <div className="Header"> 
             <h1>DeNews <div className="titleDot"/></h1>
-            <Navbar buttonClicked={this.buttonClicked} />
+            <Navbar buttonClicked={this.buttonClicked} active={this.state.active}/>
         </div>
 
         if (this.state.tab === "Home") {
