@@ -1,8 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Oswald:wght@500&display=swap');
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.contact-input input:focus-visible{
+outline: none;
+}
+
 body {
   background-color: whitesmoke;
 }
+
 .App {
   text-align: center;
   font-family: "Ubuntu", sans-serif;
