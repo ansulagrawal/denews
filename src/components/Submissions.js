@@ -113,10 +113,10 @@ class Submissions extends Component {
           <p> {value[2]} </p>{" "}
           <button
             className="auditFormButton"
-            style={{ width: "110px" }}
+            style={{ width: "185px" }}
             onClick={() => this.setState({ modalOpen: true })}
           >
-            Audit
+            Submit Audit
           </button>
           <RewardForm
             submissionIndex={index}
