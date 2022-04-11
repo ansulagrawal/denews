@@ -3,6 +3,7 @@ import _ from "lodash";
 import RewardForm from "./RewardForm";
 import blogUtils from "../utils/blogUtils";
 import Modal from "react-modal";
+import AuditReports from "./AuditReports";
 
 class Submissions extends Component {
   state = {
@@ -11,7 +12,8 @@ class Submissions extends Component {
     accounts: null,
     contract: null,
     submissions: [],
-    modalOpen: false,
+    auditFormModalOpen: false,
+    auditReportsModalOpen: false
   };
   componentDidMount = async () => {
     try {
@@ -47,7 +49,7 @@ class Submissions extends Component {
   fetchSubmissions = async () => {
     const contract = this.state.contract;
     let submissions = [];
-    await contract.methods
+    await contract?.methods
       .getSubmissionsLength()
       .call()
       .then((res) => {
@@ -55,7 +57,7 @@ class Submissions extends Component {
       })
       .then(async () => {
         if (this.state.submissionsCount !== 0) {
-          await contract.methods
+          await contract?.methods
             .getAllSubmissions()
             .call()
             .then((res) => {
@@ -66,7 +68,7 @@ class Submissions extends Component {
       });
   };
   openModal() {
-    this.setState({ modalOpen: true });
+    this.setState({ auditFormModalOpen: true });
   }
 
   afterOpenModal() {
@@ -75,7 +77,7 @@ class Submissions extends Component {
   }
 
   closeModal() {
-    this.setState({ modalOpen: false });
+    this.setState({ auditFormModalOpen: false });
   }
 
   render() {
@@ -111,13 +113,22 @@ class Submissions extends Component {
             {this.state.web3.utils.fromWei(value["reward"], "ether")} ETH{" "}
           </pre>{" "}
           <p> {value[2]} </p>{" "}
-          <button
-            className="auditFormButton"
-            style={{ width: "185px" }}
-            onClick={() => this.setState({ modalOpen: true })}
-          >
-            Submit Audit
-          </button>
+          <div style={{display: "flex"}}>
+            <button
+              className="auditFormButton"
+              style={{ width: "185px", marginRight: "30px" }}
+              onClick={() => this.setState({ auditReportsModalOpen: true })}
+            >
+              Audit&nbsp;Reports
+            </button>
+            <button
+              className="auditFormButton"
+              style={{ width: "185px" }}
+              onClick={() => this.setState({ auditFormModalOpen: true })}
+            >
+              Submit&nbsp;Audit
+            </button>
+          </div>
           <RewardForm
             submissionIndex={index}
             fetchSubmissions={this.fetchSubmissions}
@@ -168,13 +179,22 @@ class Submissions extends Component {
         </h4>
         {Submissions}
         <Modal
-          isOpen={this.state.modalOpen}
+          isOpen={this.state.auditFormModalOpen}
           onAfterOpen={this.afterOpenModal}
-          onRequestClose={() => this.setState({ modalOpen: false })}
+          onRequestClose={() => this.setState({ auditFormModalOpen: false })}
           style={{ width: "60vw" }}
-          contentLabel="Example Modal"
+          contentLabel="Audit Form"
         >
           <AuditForm />
+        </Modal>
+        <Modal
+          isOpen={this.state.auditReportsModalOpen}
+          onAfterOpen={this.afterOpenModal}
+          onRequestClose={() => this.setState({ auditReportsModalOpen: false })}
+          style={{ width: "60vw" }}
+          contentLabel="Audit Reports"
+        >
+          <AuditReports/>
         </Modal>
       </div>
     );
